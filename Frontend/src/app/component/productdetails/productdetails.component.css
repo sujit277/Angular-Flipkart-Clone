@@ -1,0 +1,30 @@
+@media only screen and (max-width: 998px) {
+  .box19 {
+    padding-left: 50px;
+    padding-right: 10px;
+  }
+  .box18 {
+    height: 100%;
+    width: 100%;
+  }
+  .box20 {
+    text-align: center;
+  }
+}
+
+.box17 {
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.box18 {
+  height: 70%;
+  width: 70%;
+}
+
+.box20 {
+  height: 100%;
+  padding-right: 0px;
+  margin-top: 80px;
+}

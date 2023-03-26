@@ -1,20 +1,24 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
 })
 
 /* Filter for Searching Product By Names and Categories */
 export class FilterPipe implements PipeTransform {
-
-  transform(value:any[],filterString:string,propertyName:string): any[] {
-    const result:any = [];
-    if(!value || filterString === '' || propertyName ===''){
+  transform(value: any[], filterString: string, propertyName: string): any[] {
+    const result: any = [];
+    if (!value || filterString === '' || propertyName === '') {
       return value;
     }
-    value.forEach((a:any)=>{
-      if(a[propertyName].trim().toLowerCase().includes(filterString.toLowerCase())){
-        result.push(a);
+    value.forEach((ele: any) => {
+      if (
+        ele[propertyName]
+          .trim()
+          .toLowerCase()
+          .includes(filterString.toLowerCase())
+      ) {
+        result.push(ele);
       }
     });
     return result;

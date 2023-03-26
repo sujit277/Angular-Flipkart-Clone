@@ -1,27 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import {CartService} from "../../service/cart.service"
+import { Router } from '@angular/router';
+import { CartService } from '../../service/cart.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  public totalitem = 0;
+  public searchTerm = '';
+  public userName!: string | null;
 
-  constructor(private cartService:CartService) { }
+  constructor(private cartService: CartService, private router: Router) {}
 
-  public totalitem:number = 0;
-  public searchTerm:string = "";
   ngOnInit(): void {
-    this.cartService.getProducts()
-    .subscribe((res)=>{
+    this.cartService.getProducts().subscribe((res) => {
       this.totalitem = res.length;
-    })
+    });
+    this.userName = localStorage.getItem('UserName');
   }
-  search(event:any){
+  search(event: any) {
     this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
     this.cartService.search.next(this.searchTerm);
   }
 
+  logout() {
+    localStorage.removeItem('UserName');
+    this.userName = '';
+  }
+
+  login() {
+    this.router.navigate(['login']);
+  }
 }

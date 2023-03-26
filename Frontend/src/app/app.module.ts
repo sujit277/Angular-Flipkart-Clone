@@ -11,6 +11,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './shared/filter.pipe';
 import { PaymentComponent } from './component/payment/payment.component';
 import {FormsModule} from "@angular/forms";
+import { CartItemComponent } from './component/cart-item/cart-item.component';
+import { EmptycartComponent } from './component/emptycart/emptycart.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { ProductdetailsComponent } from './component/productdetails/productdetails.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import {FormsModule} from "@angular/forms";
     ProductsComponent,
     LoginComponent,
     FilterPipe,
-    PaymentComponent
+    PaymentComponent,
+    CartItemComponent,
+    EmptycartComponent,
+    FooterComponent,
+    ProductdetailsComponent
   ],
   imports: [
     BrowserModule,

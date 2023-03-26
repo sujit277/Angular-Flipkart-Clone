@@ -1,103 +1,232 @@
 <!-- This Container is for Registeration Form -->
 <div *ngIf="registerShow">
-    <div class="container-fluid"
-        style="background-image: url('../../assets/gettyimages-1233327882-612x612.jpg');height: 750px;background-repeat: no-repeat;background-size: cover;">
-        <div class="row">
-            <div class="col-lg-5 col-md-6 col-sm-12 mx-auto">
-                <form [formGroup]="registerForm">   
-                    <h1 style="text-align: center;">Become Flipkart Member</h1>
-                    <div class="mb-3">
-                        <strong><label for="name" class="form-label">Name</label></strong>
-                        <input type="text" class="form-control" id="name" formControlName="name">
-                    </div>
-                    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
-                        <div *ngIf="name?.errors?.['required']">
-                            <strong><p style="color: red; font-size: 12px">Name is required</p></strong>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <strong><label for="email" class="form-label">Email</label></strong>
-                        <input type="text" class="form-control" id="email" formControlName="email">
-                    </div>
-                    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
-                        <div *ngIf="email?.errors?.['required']">
-                            <strong><p style="color: red; font-size: 12px">Email is required</p></strong>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <strong><label for="mobileNo" class="form-label">Mobile No</label></strong>
-                        <input type="text" class="form-control" id="mobileNo" formControlName="mobileNo">
-                    </div>
-                    <div *ngIf="mobileNo?.invalid && (mobileNo?.dirty || mobileNo?.touched)">
-                        <div *ngIf="mobileNo?.errors?.['required']">
-                            <strong><p style="color: red; font-size: 12px">Mobile No is required</p></strong>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <strong><label for="address" class="form-label">Address</label></strong>
-                        <input type="text" class="form-control" id="address" formControlName="address">
-                    </div>
-                    <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
-                        <div *ngIf="address?.errors?.['required']">
-                            <strong><p style="color: red; font-size: 12px">Address is required</p></strong>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <strong><label for="password" class="form-label">Password</label></strong>
-                        <input type="text" class="form-control" id="password" formControlName="password">
-                    </div>
-                    <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
-                        <div *ngIf="password?.errors?.['required']">
-                            <strong><p style="color: red; font-size: 12px">Password is required</p></strong>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <button type="submit" class="btn btn-primary"
-                            (click)="postCustomerDetails()">Register</button>&nbsp;
-                        <button type="reset" class="btn btn-primary">Reset</button>&nbsp;
-                        <strong><button type="button" class="btn btn-danger"
-                                (click)="switchToLogin()">Login</button></strong>
-                    </div>
-                </form>
+  <div
+    class="container-fluid"
+    style="
+      background-image: url('../../assets/gettyimages-1233327882-612x612.jpg');
+      height: 750px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+    <div class="row">
+      <div class="col-lg-5 col-md-6 col-sm-12 mx-auto">
+        <form [formGroup]="registerForm">
+          <h1 style="text-align: center">Become Flipkart Member</h1>
+          <div class="mb-3">
+            <strong><label for="name" class="form-label">Name</label></strong>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="name"
+            />
+          </div>
+          <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+            <div *ngIf="name?.errors?.['required']">
+              <strong
+                ><p style="color: red; font-size: 12px">
+                  Name is required
+                </p></strong
+              >
             </div>
-        </div>
+          </div>
+          <div class="mb-3">
+            <strong><label for="email" class="form-label">Email</label></strong>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              formControlName="email"
+            />
+          </div>
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+            <div *ngIf="email?.errors?.['required']">
+              <strong
+                ><p style="color: red; font-size: 12px">
+                  Email is required
+                </p></strong
+              >
+            </div>
+          </div>
+          <div class="mb-3">
+            <strong
+              ><label for="mobileNo" class="form-label"
+                >Mobile No</label
+              ></strong
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="mobileNo"
+              formControlName="mobileNo"
+            />
+          </div>
+          <div
+            *ngIf="mobileNo?.invalid && (mobileNo?.dirty || mobileNo?.touched)"
+          >
+            <div *ngIf="mobileNo?.errors?.['required']">
+              <strong
+                ><p style="color: red; font-size: 12px">
+                  Mobile No is required
+                </p></strong
+              >
+            </div>
+          </div>
+          <div class="mb-3">
+            <strong
+              ><label for="address" class="form-label">Address</label></strong
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              formControlName="address"
+            />
+          </div>
+          <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+            <div *ngIf="address?.errors?.['required']">
+              <strong
+                ><p style="color: red; font-size: 12px">
+                  Address is required
+                </p></strong
+              >
+            </div>
+          </div>
+          <div class="mb-3">
+            <strong
+              ><label for="password" class="form-label">Password</label></strong
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="password"
+              formControlName="password"
+            />
+          </div>
+          <div
+            *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+          >
+            <div *ngIf="password?.errors?.['required']">
+              <strong
+                ><p style="color: red; font-size: 12px">
+                  Password is required
+                </p></strong
+              >
+            </div>
+          </div>
+          <div class="col">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="postCustomerDetails()"
+            >
+              Register</button
+            >&nbsp;
+            <button type="reset" class="btn btn-primary">Reset</button>&nbsp;
+            <strong
+              ><button
+                type="button"
+                class="btn btn-danger"
+                (click)="switchToLogin()"
+              >
+                Login
+              </button></strong
+            >
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- This Container is for Login Form -->
 <div *ngIf="loginShow">
-    <div class="container-fluid"
-        style="background-image: url('../../assets/gettyimages-1233327882-612x612.jpg');height: 575px;background-repeat: no-repeat;background-size: cover;">
-        <div class="row">
-            <div class="col-lg-5 col-md-6 col-sm-12 mx-auto">
-                <form [formGroup]="loginForm">
-                    <h1 style="text-align: center;">Welcome to Flipkart</h1>
-                    <div class="mb-3">
-                        <strong><label for="emailLogin" class="form-label">Email</label></strong>
-                        <input type="text" class="form-control" id="emailLogin" formControlName="emailLogin">
-                    </div>
-                    <div *ngIf="emailLogin?.invalid && (emailLogin?.dirty || emailLogin?.touched)">
-                        <div *ngIf="emailLogin?.errors?.['required']">
-                            <strong><p style="color: red; font-size: 12px">Email is required</p></strong>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <strong><label for="passwordLogin" class="form-label">Password</label></strong>
-                        <input type="text" class="form-control" id="passwordLogin" formControlName="passwordLogin">
-                    </div>
-                    <div *ngIf="passwordLogin?.invalid && (passwordLogin?.dirty || passwordLogin?.touched)">
-                        <div *ngIf="passwordLogin?.errors?.['required']">
-                            <strong><p style="color: red; font-size: 12px">Password is required</p></strong>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-primary" (click)="checkForLogin()">Login</button>&nbsp;
-                        <button type="button" class="btn btn-primary">Forgot Password</button>&nbsp;
-                        <button type="button" class="btn btn-danger" (click)="switchToRegister()">Register New
-                            User</button>
-                    </div>
-                </form>
+  <div
+    class="container-fluid"
+    style="
+      background-image: url('../../assets/gettyimages-1233327882-612x612.jpg');
+      height: 575px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+    <div class="row">
+      <div class="col-lg-5 col-md-6 col-sm-12 mx-auto">
+        <form [formGroup]="loginForm">
+          <h1 style="text-align: center">Welcome to Flipkart</h1>
+          <div class="mb-3">
+            <strong
+              ><label for="emailLogin" class="form-label">Email</label></strong
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="emailLogin"
+              formControlName="emailLogin"
+            />
+          </div>
+          <div
+            *ngIf="
+              emailLogin?.invalid && (emailLogin?.dirty || emailLogin?.touched)
+            "
+          >
+            <div *ngIf="emailLogin?.errors?.['required']">
+              <strong
+                ><p style="color: red; font-size: 12px">
+                  Email is required
+                </p></strong
+              >
             </div>
-        </div>
+          </div>
+          <div class="mb-3">
+            <strong
+              ><label for="passwordLogin" class="form-label"
+                >Password</label
+              ></strong
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="passwordLogin"
+              formControlName="passwordLogin"
+            />
+          </div>
+          <div
+            *ngIf="
+              passwordLogin?.invalid &&
+              (passwordLogin?.dirty || passwordLogin?.touched)
+            "
+          >
+            <div *ngIf="passwordLogin?.errors?.['required']">
+              <strong
+                ><p style="color: red; font-size: 12px">
+                  Password is required
+                </p></strong
+              >
+            </div>
+          </div>
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="checkForLogin()"
+            >
+              Login</button
+            >&nbsp;
+            <button type="button" class="btn btn-primary">
+              Forgot Password</button
+            >&nbsp;
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="switchToRegister()"
+            >
+              Register New User
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
